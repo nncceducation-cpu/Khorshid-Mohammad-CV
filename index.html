@@ -179,11 +179,12 @@
         <span>Digital health &amp; clinical AI</span>
       </div>
       <div class="stats" aria-label="At a glance">
-        <div class="stat"><span class="n">95</span><span class="l">Works listed</span></div>
-        <div class="stat"><span class="n">h-index 26</span><span class="l">Google Scholar</span></div>
-        <div class="stat"><span class="n">2,143</span><span class="l">Citations</span></div>
-        <div class="stat"><span class="n">~$9.5M</span><span class="l">Grant funding (all roles)</span></div>
+        <div class="stat"><span class="n" id="worksStat">95</span><span class="l">Works listed</span></div>
+        <div class="stat"><span class="n" id="hIndexStat">h-index 26</span><span class="l" id="metricSource">Bibliometric profile</span></div>
+        <div class="stat"><span class="n" id="citationsStat">2,143</span><span class="l">Citations</span></div>
+        <div class="stat"><span class="n" id="grantStat">~$9.5M</span><span class="l">Grant funding (all roles)</span></div>
       </div>
+      <p class="stats-note" id="statsNote">Publication metrics refresh automatically from OpenAlex; the grant total is calculated from the grants listed below.</p>
     </section>
     <section id="appointments" tabindex="-1">
       <h2>Appointments</h2>
@@ -202,11 +203,13 @@
       <h2>Education and Training</h2>
       <p class="sec-sub">Degrees, residency, fellowships, and certifications.</p>
       <h3>Degrees and fellowships</h3>
-      <div class="entry"><div class="top"><span class="yr">2013</span><div><span class="title">Fellowship, Neonatal Hemodynamics and Targeted Neonatal Echocardiography</span><div class="meta">Universities of British Columbia and Calgary</div></div></div></div>
-      <div class="entry"><div class="top"><span class="yr">2012</span><div><span class="title">Fellowship, Neonatal Neuro-Critical Care</span><div class="meta">University of British Columbia</div></div></div></div>
-      <div class="entry"><div class="top"><span class="yr">2010</span><div><span class="title">Fellowship, Neonatal-Perinatal Medicine</span><div class="meta">University of Calgary</div></div></div></div>
-      <div class="entry"><div class="top"><span class="yr">2006</span><div><span class="title">MSc and Specialty in Pediatrics</span><div class="meta">University of Damascus and Arab League</div></div></div></div>
-      <div class="entry"><div class="top"><span class="yr">2001</span><div><span class="title">Doctor of Medicine (MD)</span><div class="meta">University of Damascus</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2013 to 2014</span><div><span class="title">Fellowship, Neonatal Hemodynamics and Targeted Neonatal Echocardiography</span><div class="meta">Universities of British Columbia and Calgary</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2011 to 2012</span><div><span class="title">Fellowship, Neonatal Neurology / Neuro-Critical Care</span><div class="meta">University of British Columbia</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2009 to 2010</span><div><span class="title">Fellowship, Neonatal-Perinatal Medicine</span><div class="meta">University of Calgary</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2001 to 2006</span><div><span class="title">Fellowship, Arab Board of Pediatrics (FABP)</span><div class="meta">Arab League</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2001 to 2005</span><div><span class="title">Master's Degree in Pediatrics</span><div class="meta">University of Damascus</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2001 to 2005</span><div><span class="title">Pediatric Residency</span><div class="meta">Damascus University Children's Hospital</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">1996 to 2001</span><div><span class="title">Doctor of Medicine (MD)</span><div class="meta">University of Damascus</div></div></div></div>
       <h3>Certifications and diplomas</h3>
       <div class="entry"><div class="top"><span class="yr">2024</span><div><span class="title">Neonatal Neuro-Critical Care Diplomate (UCNS)</span><div class="meta">United Council for Neurologic Subspecialties</div></div></div></div>
       <div class="entry"><div class="top"><span class="yr">2020</span><div><span class="title">FRCPC, Neonatal-Perinatal Medicine</span><div class="meta">Royal College of Physicians and Surgeons of Canada</div></div></div></div>
@@ -214,7 +217,7 @@
       <div class="entry"><div class="top"><span class="yr">2014</span><div><span class="title">Restricted Licence as Neonatologist</span><div class="meta">College of Physicians and Surgeons of Alberta</div></div></div></div>
       <div class="entry"><div class="top"><span class="yr">2007</span><div><span class="title">Pediatric Senior Registrar License</span><div class="meta">Saudi Commission for Health Specialties</div></div></div></div>
       <div class="entry"><div class="top"><span class="yr">2006</span><div><span class="title">FABP, Pediatrics</span><div class="meta">Arab Board of Health Specializations</div></div></div></div>
-      <div class="entry"><div class="top"><span class="yr">&nbsp;</span><div><span class="title">AFC Diploma, Neonatal Hemodynamics and Targeted Neonatal Echocardiography</span></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2026</span><div><span class="title">Area of Focused Competence in Neonatal Hemodynamics and Targeted Neonatal Echocardiography</span><div class="meta">Royal College of Physicians and Surgeons of Canada</div></div></div></div>
     </section>
     <section id="leadership" tabindex="-1">
       <h2>Leadership and Program Building</h2>
@@ -259,10 +262,18 @@
       </ul>
       <h3>Impact and reach</h3>
       <ul class="clean">
+        <li><strong>Neonatal outreach.</strong> <span class="sub">Founder and lead since 2015 of an outreach education program for Level I and II centres in Southern Alberta. The program introduced Canada's first portable servo-controlled therapeutic hypothermia device for active cooling during neonatal transport and was associated with improved referral times and reduced acute brain injury.</span></li>
         <li><strong>Neuroprotection in HIE.</strong> <span class="sub">A provincial care pathway, 24/7 continuous video EEG monitoring by trained bedside nurses, and a neuro-exam certification process were associated with a fall in HIE-related mortality from 13 percent to 5 percent and a fall in brain injury on MRI from 48 percent to 33 percent.</span></li>
         <li><strong>Drive IVH to Zero.</strong> <span class="sub">A seven-year quality improvement program for infants under 29 weeks achieved a sustained reduction of more than 50 percent in severe intraventricular hemorrhage.</span></li>
         <li><strong>Online neonatal education.</strong> <span class="sub">The CME program (172 RCPSC credits) reached more than 2,200 learners across 148 countries, with over 15,000 cumulative course enrollments.</span></li>
         <li><strong>Neonatal Brain Injury book.</strong> <span class="sub">More than 600,000 downloads across 158 countries.</span></li>
+      </ul>
+      <h3>Global education and capacity building</h3>
+      <ul class="clean">
+        <li><strong>Syria.</strong> <span class="sub">Long-term mentorship, didactic teaching, and a tailored OSCE supporting a train-the-trainer model and an independently functioning point-of-care ultrasound program.</span></li>
+        <li><strong>India.</strong> <span class="sub">Ongoing faculty role in the Sonographic Clinical Assessment Network, including sustained POCUS mentorship and NeoSCAN Delhi.</span></li>
+        <li><strong>China, Saudi Arabia, and Ecuador.</strong> <span class="sub">Fellowship teaching, scientific and planning committee service, invited lectures, neonatal transport education, and hands-on cranial ultrasound workshops.</span></li>
+        <li><strong>Program development consultancy.</strong> <span class="sub">Expert guidance to institutions developing neonatal neurocritical care services, specialized care models, and IVH-prevention quality-improvement programs.</span></li>
       </ul>
       <h3>Smart tools</h3>
       <ul class="clean">
@@ -406,6 +417,9 @@
       <div class="entry"><div class="top"><span class="yr">2015</span><div><span class="title">Class of 2015 Clerkship Award for Excellence in Clinical Teaching</span><div class="meta">University of Calgary</div></div></div></div>
       <div class="entry"><div class="top"><span class="yr">2012</span><div><span class="title">Department of Pediatrics Fellow Research Award</span><div class="meta">University of British Columbia</div></div></div></div>
       <div class="entry"><div class="top"><span class="yr">2010</span><div><span class="title">First Star Educator</span><div class="meta">Rocky View General Hospital, Calgary NICU</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2009</span><div><span class="title">Award for Most Clinically Applicable Study</span><div class="meta">Research Methodology Course, Alberta Children's Hospital</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2008</span><div><span class="title">Certificate of Appreciation</span><div class="meta">King Abdul Aziz National Guard Hospital and Ministry of Health, Saudi Arabia</div></div></div></div>
+      <div class="entry"><div class="top"><span class="yr">2007</span><div><span class="title">Certificate of Appreciation</span><div class="meta">Royal Commission Medical Centre, Saudi Arabia</div></div></div></div>
     </section>
     <section id="contact" tabindex="-1">
       <h2>Contact and Links</h2>
@@ -576,6 +590,67 @@ var PUBS = [
   document.getElementById("pubSort").addEventListener("change",function(e){state.sort=e.target.value; render();});
   document.getElementById("pubType").addEventListener("change",function(e){state.type=e.target.value; render();});
   render();
+  document.getElementById("worksStat").textContent=PUBS.length.toLocaleString();
+  (function updateGrantTotal(){
+    var total=0;
+    [].slice.call(document.querySelectorAll("#grants .meta")).forEach(function(el){
+      var match=el.textContent.match(/\$([\d,]+)/);
+      if(match) total+=Number(match[1].replace(/,/g,""));
+    });
+    if(total) document.getElementById("grantStat").textContent="~$"+(total/1000000).toFixed(1)+"M";
+  })();
+  (async function updateBibliometrics(){
+    try{
+      var response=await fetch("https://api.openalex.org/authors?search=Khorshid%20Mohammad&per-page=10");
+      if(!response.ok) throw new Error("metrics unavailable");
+      var payload=await response.json();
+      var candidates=(payload.results||[]).filter(function(author){ return author.display_name==="Khorshid Mohammad"; });
+      var author=candidates.find(function(candidate){
+        return (candidate.last_known_institutions||[]).some(function(inst){ return /Calgary|Alberta Children/i.test(inst.display_name||""); });
+      }) || candidates[0];
+      if(!author) throw new Error("author not found");
+      var h=author.summary_stats && author.summary_stats.h_index;
+      if(h!=null) document.getElementById("hIndexStat").textContent="h-index "+h.toLocaleString();
+      if(author.cited_by_count!=null) document.getElementById("citationsStat").textContent=author.cited_by_count.toLocaleString();
+      document.getElementById("metricSource").textContent="OpenAlex (live)";
+      var authorId=(author.id||"").split("/").pop();
+      var worksResponse=await fetch("https://api.openalex.org/works?filter=author.id:"+encodeURIComponent(authorId)+"&sort=publication_date:desc&per-page=200");
+      if(worksResponse.ok){
+        var worksPayload=await worksResponse.json();
+        var known={};
+        function titleKey(value){ return (value||"").toLowerCase().replace(/[^a-z0-9]+/g,""); }
+        function inferredTopics(title){
+          var text=(title||"").toLowerCase(), topics=[];
+          if(/hypoxic|encephalopath|hypotherm|hie\b/.test(text)) topics.push("HIE");
+          if(/preterm|prematur|intraventricular|hemorrhage|phvd/.test(text)) topics.push("Preterm Brain Injury");
+          if(/hemodynamic|blood pressure|inotrope|cardiac|ductus|perfusion/.test(text)) topics.push("Hemodynamics");
+          if(/ultrasound|eeg|mri|imaging|neuromonitor/.test(text)) topics.push("Neuromonitoring & Ultrasound");
+          if(/quality improvement|neuroprotect|bundle/.test(text)) topics.push("Neuroprotection & QI");
+          if(/training|education|simulation|curricul/.test(text)) topics.push("Education & Innovation");
+          if(/artificial intelligence|machine learning|digital health/.test(text)) topics.push("Digital Health & AI");
+          return topics.length?topics:["Neonatal Care & Outcomes"];
+        }
+        PUBS.forEach(function(item){ known[titleKey(item.t)]=true; });
+        (worksPayload.results||[]).forEach(function(work){
+          if(!work.title || known[titleKey(work.title)]) return;
+          var authors=(work.authorships||[]).map(function(row){ return row.author && row.author.display_name; }).filter(Boolean).join(", ");
+          var source=work.primary_location && work.primary_location.source && work.primary_location.source.display_name;
+          var biblio=work.biblio||{}, citation=[source, work.publication_year].filter(Boolean).join(". ");
+          if(biblio.volume) citation+=";"+biblio.volume;
+          if(biblio.issue) citation+="("+biblio.issue+")";
+          if(biblio.first_page) citation+=":"+biblio.first_page+(biblio.last_page?"-"+biblio.last_page:"");
+          if(citation) citation+=".";
+          PUBS.push({y:work.publication_year||0,a:authors,t:work.title,j:citation,link:work.doi||work.id,type:/review/i.test(work.type||"")?"Review":"Research",topics:inferredTopics(work.title)});
+          known[titleKey(work.title)]=true;
+        });
+        document.getElementById("worksStat").textContent=PUBS.length.toLocaleString();
+        render();
+      }
+      document.getElementById("statsNote").textContent="Publication metrics and newly indexed works refreshed live from OpenAlex on "+new Date().toLocaleDateString()+"; the grant total is calculated from the grants listed below.";
+    }catch(error){
+      document.getElementById("statsNote").textContent="Showing the latest saved bibliometric values; the live source is temporarily unavailable. The grant total is calculated from the grants listed below.";
+    }
+  })();
   document.getElementById("printBtn").addEventListener("click",function(){window.print();});
   var root=document.documentElement, themeBtn=document.getElementById("themeBtn");
   try{ var s=localStorage.getItem("km_cv_theme"); if(s) root.setAttribute("data-theme",s); }catch(e){}
