@@ -490,7 +490,6 @@
 var PUBS = [
 {y:2025, a:"Mohammad K, CIRCUIT investigators.", t:"A Randomized Multicenter Trial of Hybrid Closed-Loop Insulin Therapy with Control-IQ Technology in Type 1 Diabetes in Pregnancy.", j:"Diabetes. 2025.", link:"https://scholar.google.com/scholar?q=A+Randomized+Multicenter+Trial+of+Hybrid+Closed-Loop+Insulin+Therapy+with+Control-IQ+Technology+in+Type+1+Diabetes+in+Pregnancy", type:"Research", topics:["Neonatal Care & Outcomes"]},
 {y:2021, a:"Mohammad K, et al.", t:"Neonatal Stroke is Not Associated With Birth Trauma.", j:"Stroke. 2021.", link:"https://scholar.google.com/scholar?q=Neonatal+Stroke+is+Not+Associated+With+Birth+Trauma", type:"Research", topics:["Neonatal Care & Outcomes"]},
-{y:2016, a:"Mohammad K.", t:"Implementation of a Neonatal Neuro-Critical Care Program (N-NCC): Improved Seizure Detection and Management in Neonates with Hypoxic Ischemic Encephalopathy.", j:"Annals of Neurology. 2016.", link:"https://scholar.google.com/scholar?q=Implementation+of+a+Neonatal+Neuro-Critical+Care+program+Improved+Seizure+Detection+and+Management", type:"Research", topics:["HIE","Neuromonitoring & Ultrasound"]},
 {y:2024, a:"Afifi J, Shivananda S, Wintermark P, Wood S, Brain P, Mohammad K.", t:"Quality improvement and outcomes for neonates with hypoxic-ischemic encephalopathy: obstetrics and neonatal perspectives.", j:"Semin Perinatol. 2024;48:151904.", link:"https://doi.org/10.1053/j.semperi.2024.151904", type:"Review", topics:["HIE","Neuroprotection & QI","Neonatal Care & Outcomes"]},
 {y:2024, a:"Acun C, Akugizibwe C, Aly H, Avian AA, Aycan N, Baik-Schneditz N, et al.", t:"Proceedings of the 15th International Newborn Brain Conference: Other forms of brain monitoring, such as NIRS, fMRI, biochemical, etc.: Fota Island, Cork, Ireland, February 28 - March 2, 2024.", j:"J Neonatal Perinatal Med. 2024;17(3):S393-S419.", link:"https://doi.org/10.3233/NPM-249004", type:"Proceedings", topics:["Neuromonitoring & Ultrasound"]},
 {y:2024, a:"Afifi J, Agarwal S, Alexe A, Allen M, Anastasiou A, Angert R, et al.", t:"Proceedings of the 15th International Newborn Brain Conference: Long-term outcome studies, developmental care, palliative care, ethical dilemmas, and challenging clinical scenarios in neonatal neurology: Fota Island, Cork, Ireland, February 28 - March 2, 2024.", j:"J Neonatal Perinatal Med. 2024;17(3):S447-S500.", link:"https://doi.org/10.3233/NPM-249006", type:"Proceedings", topics:["Neonatal Care & Outcomes"]},
@@ -689,12 +688,19 @@ var PUBS = [
           if(/artificial intelligence|machine learning|digital health/.test(text)) topics.push("Digital Health & AI");
           return topics.length?topics:["Neonatal Care & Outcomes"];
         }
+        var excludedAbstractDois={
+          "10.1017/cjn.2018.160":true,
+          "10.1017/cjn.2018.89":true,
+          "10.1017/cjn.2019.157":true
+        };
         PUBS.forEach(function(item){ known[titleKey(item.t)]=true; var doi=doiKey(item.link); if(doi) knownDois[doi]=true; });
         (worksPayload.results||[]).forEach(function(work){
           var openAlexId=(work.id||"").split("/").pop().toUpperCase();
           if(openAlexId==="W2231781098" || openAlexId==="W2617244819") return;
           if(/staphylococcus aureus sepsis inducing severe hemolysis/i.test(work.title||"")) return;
           var workDoi=doiKey(work.doi);
+          if(workDoi && excludedAbstractDois[workDoi]) return;
+          if(/implementation of a neonatal neuro-critical care program \(n-ncc\).*improved seizure detection/i.test(work.title||"")) return;
           if(!work.title || known[titleKey(work.title)] || (workDoi && knownDois[workDoi])) return;
           var authors=(work.authorships||[]).map(function(row){ return row.author && row.author.display_name; }).filter(Boolean).join(", ");
           var source=work.primary_location && work.primary_location.source && work.primary_location.source.display_name;
