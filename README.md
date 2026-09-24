@@ -1,6 +1,6 @@
 # Khorshid Mohammad — Interactive Academic CV
 
-A static, privacy-conscious academic CV and browser-based update manager.
+A private, privacy-conscious academic CV and browser-based update manager.
 
 ## Features
 
@@ -12,8 +12,8 @@ A static, privacy-conscious academic CV and browser-based update manager.
 - Export to printable PDF, Word-compatible DOC, standalone HTML, or plain text
 - Dark mode, mobile layout, accessible navigation, and publication filters
 
-## Publishing updates
+## Private editing and updates
 
-The editor stores additions in browser local storage. Use **Download backup** to save them as JSON. To make additions part of the public site permanently, merge them into `index.html` or commit an approved data update.
+The editor stores additions in browser local storage. Use **Download backup** to save them as JSON. To make additions permanent, merge them into `index.html` and commit the approved update to this private repository.
 
-GitHub Pages deploys automatically after changes are pushed to `main`.
+Open the private repository in GitHub to edit source files, or use GitHub Codespaces to open the website-like private preview. Access is limited to invited GitHub collaborators.
