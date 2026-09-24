@@ -585,7 +585,7 @@ var PUBS = [
 {y:2016, a:"Mohammad K, Goswami I, Buchhalter J, Bello-Espinosa L.", t:"Developing a consultation model for neonatal neurocritical care: a two-year experience.", j:"Paediatr Child Health. 2016.", link:"https://scholar.google.com/scholar?q=Developing%20a%20consultation%20model%20neonatal%20neurocritical%20care%20two-year%20experience%20Mohammad", type:"Research", topics:["Education & Innovation","Neonatal Care & Outcomes"]},
 {y:2017, a:"Goswami I, Lodha A, Dalgleish S, Mohammad K.", t:"Early-onset Escherichia coli sepsis and severe intraventricular hemorrhage in extremely premature infants: case series and literature review.", j:"Acad J Pediatr Neonatol. 2017.", link:"https://scholar.google.com/scholar?q=Early%20onset%20Escherichia%20coli%20sepsis%20severe%20intraventricular%20hemorrhage%20extremely%20premature%20Goswami%20Mohammad", type:"Research", topics:["Preterm Brain Injury","Neonatal Care & Outcomes"]},
 {y:2011, a:"Roychoudhury S, Mohammad K, Yusuf K, Obaid H, Al-Awad E.", t:"Successful outcome of therapeutic hypothermia in a case of sudden postnatal cardiac arrest and asphyxia: a case report and literature review.", j:"J Pediatr Care. 2011.", link:"https://scholar.google.com/scholar?q=Successful%20outcome%20therapeutic%20hypothermia%20sudden%20postnatal%20cardiac%20arrest%20asphyxia%20case%20report%20Mohammad", type:"Research", topics:["HIE"]},
-{y:2011, a:"Al Awad E, Obaid H, Mohammad K, Amin H, Lodha A.", t:"Staphylococcus aureus sepsis inducing severe hemolysis in a G6PD-deficient preterm infant causing severe neonatal jaundice and kernicterus.", j:"J Neonatal Perinatal Med. 2011.", link:"https://scholar.google.com/scholar?q=Staphylococcus%20aureus%20sepsis%20hemolysis%20G6PD%20deficient%20preterm%20kernicterus%20Al%20Awad%20Mohammad", type:"Research", topics:["Neonatal Care & Outcomes"]},
+{y:2011, a:"Al Awad E, Obaid H, Mohammad K, Amin H, Lodha A.", t:"Staphylococcus aureus sepsis inducing severe hemolysis in a G6PD-deficient preterm infant causing severe neonatal jaundice and kernicterus.", j:"J Neonatal Perinatal Med. 2011;4(4):373-377.", link:"https://doi.org/10.3233/NPM-2011-51611", type:"Research", topics:["Neonatal Care & Outcomes"]},
 ];
   (function deduplicatePublications(){
     var seenTitles={}, seenDois={};
@@ -691,6 +691,9 @@ var PUBS = [
         }
         PUBS.forEach(function(item){ known[titleKey(item.t)]=true; var doi=doiKey(item.link); if(doi) knownDois[doi]=true; });
         (worksPayload.results||[]).forEach(function(work){
+          var openAlexId=(work.id||"").split("/").pop().toUpperCase();
+          if(openAlexId==="W2231781098" || openAlexId==="W2617244819") return;
+          if(/staphylococcus aureus sepsis inducing severe hemolysis/i.test(work.title||"")) return;
           var workDoi=doiKey(work.doi);
           if(!work.title || known[titleKey(work.title)] || (workDoi && knownDois[workDoi])) return;
           var authors=(work.authorships||[]).map(function(row){ return row.author && row.author.display_name; }).filter(Boolean).join(", ");
